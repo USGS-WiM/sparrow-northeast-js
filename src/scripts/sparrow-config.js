@@ -18,9 +18,9 @@ var groupResultsInitIndex = 1; //sets the default layer for the application.  In
 
 var splitLayers = [5, 6, 7, 8, 14, 15, 16, 17, 23, 24, 25, 26, 32,33,34,35]; //important! UPDATE layer Ids of all state split layers (st_cats, sg3, sg2, sg1)
 
-var mapCenter = [-94.0, 40.0];
+var mapCenter = [-72.5, 41.5];
 //app.defaultMapCenter = [-87, 42];
-defaultZoomLevel = 5;
+defaultZoomLevel = 6;
 
 borderThreshold = 10; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
 var dynamicBorderLayers = ["Catchment", "12-Digit hydrologic unit code", "Major Watershed"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
