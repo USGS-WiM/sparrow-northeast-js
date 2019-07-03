@@ -23,16 +23,16 @@ var mapCenter = [-94.0, 40.0];
 defaultZoomLevel = 5;
 
 borderThreshold = 10; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
-var dynamicBorderLayers = ["Catchment", "8-Digit hydrologic unit code", "Tributary"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
+var dynamicBorderLayers = ["Catchment", "12-Digit hydrologic unit code", "Major Watershed"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
 
 var initQueryParams = ["ST", "GP3", "GP2", "GP1"]; //used to query for the AOI dropdown values on app init.
 
 //used to set dynamic labels in chart
 var groupResultsLabels = {
     a: "Catchment ID",
-    b: "8-Digit hydrologic unit code",
-    c: "Tributary",
-    d: "River Basin",
+    b: "12-Digit hydrologic unit code",
+    c: "Major Watershed",
+    d: "Major Estuary/Bay/Gulf Drainage",
     e: "State"
 };
 
@@ -167,48 +167,40 @@ var phosphorusSourceDefinitions = {
     s2: "Urban Land",
     s3: "Farm Fertilizer",
     s4: "Manure",
-    s5: "Natural Sources",
-    s6: "Canada"
+    s5: "Mineral Phosphorus"
 };
 
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var nitrogenSourceDefinitions = {
     s1: "Sewerage Point Sources",
     s2: "Urban Land",
-    s3: "Farm Fertilizer",
-    s4: "Manure",
-    s5: "Atmospheric Deposition",
+    s3: "Septic System Effluent",
+    s4: "Farm Fertilizer",
+    s5: "Manure",
     s6: "Nitrogen Fixing Crops",
-    s7: "Canada"
+    s7: "Atmospheric Deposition"
 };
 
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var streamflowSourceDefinitions = {
     s1: "Precipitation minus Actual ET",
-    s2: "Sewerage discharge, external sources",
-    s3: "Diversions into area",
-    s4: "Springs",
-    s5: "Canada"
+    s2: "Sewerage Discharge",
+    s3: "Diversions into Area",
 };
 
 var sedimentSourceDefinitions = {
-    s1: "Urban-Medium/Coarse",
-    s2: "Urban-Colluvium/Residuum/Carbonate",
-    s3: "Urban-Fine/Silt",
-    s4: "Agriculture-Medium/Coarse",
-    s5: "Agriculture-Colluvium/Residuum/Carbonate",
-    s6: "Agriculture-Fine/Silt",
-    s7: "Natural/Other-Medium/Coarse",
-    s8: "Natural/Other-Colluvium/Residuum/Carbonate",
-    s9: "Natural/Other-Fine/Silt",
-    s10: 'All Landuses-"Other" Geology',
-    s11: "Canada",
-    s12: "Channel Sources"
+    s1: "Urban - Medium / Coarse",
+    s2: "Urban - Residuum",
+    s3: "Urban - Fine",
+    s4: "Agriculture - Medium / Coarse / Resdiuum",
+    s5: "Agriculture - Fine",
+    s6: "Non - agriculture / non - urban land",
+    s7: "Channel Sources"
 };
 
 /*IMPORTANT! the following two objects are used as a patch to account for SUSPENDED SEDIMENT DAL and DAY fields that were truncated in the source data.
 sources 10+ have non-standard source codes.  Be sure to update the references in the SS group fields below, and double-check the data to make sure the groups in the following objects match.*/
-var sedimentSourceDefinitions_DAL = {
+/* var sedimentSourceDefinitions_DAL = {
     s1: "Urban-Medium/Coarse",
     s2: "Urban-Colluvium/Residuum/Carbonate",
     s3: "Urban-Fine/Silt",
@@ -221,9 +213,9 @@ var sedimentSourceDefinitions_DAL = {
     s0: 'All Landuses-"Other" Geology',
     11: "Canada",
     10: "Channel Sources"
-};
+}; */
 
-var sedimentSourceDefinitions_DAY = {
+/* var sedimentSourceDefinitions_DAY = {
     s1: "Urban-Medium/Coarse",
     s2: "Urban-Colluvium/Residuum/Carbonate",
     s3: "Urban-Fine/Silt",
@@ -237,7 +229,7 @@ var sedimentSourceDefinitions_DAY = {
     13: "Canada",
     14: "Channel Sources"
 };
-
+ */
 /**get the HEX values below from project Google Doc and make sure:  
     1. each color corresponds with the order of SourceDefinitions objects above  
     2. there the number of hex colors matches the number of nutrient sources
@@ -1123,7 +1115,7 @@ var Group3_ss = [
     {
         field: "GP3_DAL",
         name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAL, mappedDefinitions_ss, "dal", "gp3")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp3")
     },
     {
         field: "GP3_AY",
@@ -1133,7 +1125,7 @@ var Group3_ss = [
     {
         field: "GP3_DAY",
         name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAY, mappedDefinitions_ss, "day", "gp3")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp3")
     }
 ];
 
@@ -1146,7 +1138,7 @@ var Group2_ss = [
     {
         field: "GP2_DAL",
         name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAL, mappedDefinitions_ss, "dal", "gp2")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp2")
     },
     {
         field: "GP2_AY",
@@ -1156,7 +1148,7 @@ var Group2_ss = [
     {
         field: "GP2_DAY",
         name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAY, mappedDefinitions_ss, "day", "gp2")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp2")
     }
 ];
 
@@ -1169,7 +1161,7 @@ var Group1_ss = [
     {
         field: "GP1_DAL",
         name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAL, mappedDefinitions_ss, "dal", "gp1")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "gp1")
     },
     {
         field: "GP1_AY",
@@ -1179,7 +1171,7 @@ var Group1_ss = [
     {
         field: "GP1_DAY",
         name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAY, mappedDefinitions_ss, "day", "gp1")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "gp1")
     }
 ];
 
@@ -1267,7 +1259,7 @@ var Group3_st_ss = [
     {
         field: "SG3_DAL",
         name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAL, mappedDefinitions_ss, "dal", "sg3")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg3")
     },
     {
         field: "SG3_AY",
@@ -1277,7 +1269,7 @@ var Group3_st_ss = [
     {
         field: "SG3_DAY",
         name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAY, mappedDefinitions_ss, "day", "sg3")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "sg3")
     }
 ];
 
@@ -1290,7 +1282,7 @@ var Group2_st_ss = [
     {
         field: "SG2_DAL",
         name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAL, mappedDefinitions_ss, "dal", "sg2")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg2")
     },
     {
         field: "SG2_AY",
@@ -1300,7 +1292,7 @@ var Group2_st_ss = [
     {
         field: "SG2_DAY",
         name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAY, mappedDefinitions_ss, "day", "sg2")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "sg2")
     }
 ];
 
@@ -1313,7 +1305,7 @@ var Group1_st_ss = [
     {
         field: "SG1_DAL",
         name: mappedDefinitions_ss.dal,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAL, mappedDefinitions_ss, "dal", "sg1")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "dal", "sg1")
     },
     {
         field: "SG1_AY",
@@ -1323,7 +1315,7 @@ var Group1_st_ss = [
     {
         field: "SG1_DAY",
         name: mappedDefinitions_ss.day,
-        chartOutfields: getFields(sedimentSourceDefinitions_DAY, mappedDefinitions_ss, "day", "sg1")
+        chartOutfields: getFields(sedimentSourceDefinitions, mappedDefinitions_ss, "day", "sg1")
     }
 ];
 ////END SUSPENDED SEDIMENT LAYER GROUPS______________________________________________________________________________________________________________________________
