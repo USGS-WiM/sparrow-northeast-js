@@ -132,29 +132,11 @@ require([
             showGroupHeading: true,
             includeInLayerList: true,
             layers: {
-                "Northeast Reaches - zoom in to view": {
+                "Reaches > 100 cfs": {
                     url: serviceBaseURL,
-                    visibleLayers: [42],
+                    visibleLayers: [40],
                     options: {
-                        id: "streams",
-                        visible: false,
-                        minScale: 3155581.108577
-                    },
-                    wimOptions: {
-                        type: "layer",
-                        layerType: "agisDynamic",
-                        includeInLayerList: true,
-                        hasOpacitySlider: true,
-                        hasZoomto: false,
-                        zoomScale: 3155581.108577,
-                        includeLegend: false
-                    }
-                },
-                "Reaches > 150 cfs": {
-                    url: serviceBaseURL,
-                    visibleLayers: [41],
-                    options: {
-                        id: "gt150",
+                        id: "gt100",
                         visible: false
                     },
                     wimOptions: {
@@ -166,11 +148,11 @@ require([
                         includeLegend: false
                     }
                 },
-                "Mainstems": {
+                "SPARROW Reaches": {
                     url: serviceBaseURL,
-                    visibleLayers: [40],
+                    visibleLayers: [41],
                     options: {
-                        id: "mainstem",
+                        id: "reaches",
                         visible: false
                     },
                     wimOptions: {
