@@ -1159,7 +1159,7 @@ require([
                             //UPDATE important! make sure the field names match what is in the REST layer
                             calibrationTemplate.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.STATION_NM +
+                                    responseObj.feature.attributes.STATION_NA +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
                                     responseObj.feature.attributes.STATION_ID +
@@ -1175,7 +1175,7 @@ require([
                                     "<div><b>SPARROW Estimated TP Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.PLOAD_TOTA +
+                                    responseObj.feature.attributes.PREDICT +
                                     "</div><br>"
                             );
 
@@ -1196,7 +1196,7 @@ require([
                             //UPDATE important! make sure the field names below match what is in the REST layer
                             calibrationTemplateN.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.STATION_NM +
+                                    responseObj.feature.attributes.STATION_NA +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
                                     responseObj.feature.attributes.STATION_ID +
@@ -1212,7 +1212,7 @@ require([
                                     "<div><b>SPARROW Estimated TN Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.PLOAD_TOTA +
+                                    responseObj.feature.attributes.PREDICT +
                                     "</div><br>"
                             );
 
@@ -1231,7 +1231,7 @@ require([
                             //UPDATE important! make sure the field names below match what is in the REST layer
                             calibrationTemplateN.setContent(
                                 "<div><b>Station Name:</b> " +
-                                responseObj.feature.attributes.STATION_NM +
+                                responseObj.feature.attributes.STATION_NA +
                                 "</div><br>" +
                                 "<div><b>Station ID:</b> </b>" +
                                 responseObj.feature.attributes.STATION_ID +
@@ -1245,7 +1245,7 @@ require([
                                 "</div><br>" +
                                 "<div><b>SPARROW Estimated Average Streamflow (cfs): " +
                                 "</b>" +
-                                responseObj.feature.attributes.PLOAD_TOTA +
+                                responseObj.feature.attributes.PREDICT +
                                 "</div><br>"
                             );
 
@@ -1264,7 +1264,7 @@ require([
                             //UPDATE important! make sure the field names below match what is in the REST layer
                             calibrationTemplateN.setContent(
                                 "<div><b>Station Name:</b> " +
-                                responseObj.feature.attributes.STATION_NM +
+                                responseObj.feature.attributes.STATION_NA +
                                 "</div><br>" +
                                 "<div><b>Station identifier:</b> </b>" +
                                 responseObj.feature.attributes.STATION_ID +
@@ -1272,20 +1272,13 @@ require([
                                 "<div><b>SPARROW Reach ID: </b>" +
                                 responseObj.feature.attributes.COMID +
                                 "</div><br>" +
-                                "<div><b>Constituent (SSC or TSS): </b>" +
-                                responseObj.feature.attributes.CONSTITUEN +
-                                "</div><br>" +
                                 "<div><b>Beale or Fluxmaster Estimated SSC or TSS Load (MT/yr): " +
                                 "</b>" +
-                                responseObj.feature.attributes.ACTUAL_MT +
-                                "</div><br>" +
-                                "<div><b>SPARROW Estimated Factor for converting TSS to SSC: " +
-                                "</b>" +
-                                responseObj.feature.attributes.TSS_CONV +
+                                responseObj.feature.attributes.ACTUAL +
                                 "</div><br>" +
                                 "<div><b>SPARROW Estimated SSC Load (MT/yr): " +
                                 "</b>" +
-                                responseObj.feature.attributes.PLOAD_MT +
+                                responseObj.feature.attributes.PREDICT +
                                 "</div><br>"
                             );
 
