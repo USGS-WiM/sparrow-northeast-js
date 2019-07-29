@@ -1170,7 +1170,7 @@ require([
                                     "<div><b>Beale or Fluxmaster Estimated TP Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.ACTUAL +
+                                    responseObj.feature.attributes.ACTUAL.toPrecision(2) +
                                     "</div><br>" +
                                     "<div><b>SPARROW Estimated TP Load " +
                                     chartUnits +
