@@ -6,7 +6,7 @@ THIS CONFIG REMOVES CATCHMENT AND AGGREGATE LABELS FROM THE CHARTOUTFIELS OBJECT
 ALSO uses SPARROWID and ST_SPARRID in place of COMID, ST_COMID
 */
 
-var appTitle = "2012 SPARROW Models for the Northeast: Streamflow, Total Nitrogen, Total Phosphorus and Suspended Sediment";
+var appTitle = "2012 SPARROW Models for the Northeast: Total Phosphorus, Total Nitrogen, Suspended Sediment, and Streamflow";
 var appVersion = "v0.9.0"; // could pull this from code/package.json
 
 var serviceBaseURL =
@@ -38,10 +38,10 @@ var groupResultsLabels = {
 
 //download locations
 var rootURL = "https://sparrow.wim.usgs.gov/northeast/downloads/";
-var phosphorusShapefileURL = rootURL + "northeast_shapefiles_phosphorus.zip";
-var nitrogenShapefileURL = rootURL + "northeast_shapefiles_nitrogen.zip";
-var streamflowShapefileURL = rootURL + "northeast_shapefiles_streamflow.zip";
-var sedimentShapefileURL = rootURL + "northeast_shapefiles_suspended_sediment.zip";
+var phosphorusShapefileURL = rootURL + "northeast_cats_results_tp.zip";
+var nitrogenShapefileURL = rootURL + "northeast_cats_results_tn.zip";
+var streamflowShapefileURL = rootURL + "northeast_cats_results_q.zip";
+var sedimentShapefileURL = rootURL + "northeast_cats_results_ss.zip";
 var phosCalibrationURL = rootURL + "northeast_calibration_sites_tp.zip";
 var nitroCalibrationURL = rootURL + "northeast_calibration_sites_tn.zip";
 var streamflowCalibrationURL = rootURL + "northeast_calibration_sites_q.zip";
