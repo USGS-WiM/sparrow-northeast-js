@@ -238,6 +238,8 @@ sources 10+ have non-standard source codes.  Be sure to update the references in
     3. find coordinating colors (using some sort of gradient generator) and add to the 
       **ToColors arrays. The code will order it from light --> dark, so don't worry about that.
 **/
+var fromSourceColor = "#FFFFFF";
+var toSourceColor = "#000000";
 var phosColors = ["#BF0000", "#FFCCFF", "#FFEC99", "#663100", "#A2EB85"];
 var phosToColors = ["#580000", "#4c044c", "#6e5900", "#120900", "#174f00"];
 
