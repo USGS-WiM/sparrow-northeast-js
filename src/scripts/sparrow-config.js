@@ -23,7 +23,7 @@ var mapCenter = [-72.5, 41.5];
 defaultZoomLevel = 6;
 
 borderThreshold = 10; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
-var dynamicBorderLayers = ["Catchment", "12-Digit hydrologic unit code", "Major Watershed"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
+var dynamicBorderLayers = ["Catchment", "12-Digit hydrologic unit code", "Tributary"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
 
 var initQueryParams = ["ST", "GP3", "GP2", "GP1"]; //used to query for the AOI dropdown values on app init.
 
@@ -49,7 +49,7 @@ var sedimentCalibrationURL = rootURL + "northeast_calibration_sites_ss.zip";
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },
-    { field: "GRP1", name: "Main River Basin" },
+    { field: "GRP1", name: "Major Drainage Area" },
     { field: "GRP2", name: "Tributary" },
     { field: "GRP_3_NA_1", name: "Join Field" },
     { field: "Area_g3", name: "HUC10 area (mi2)" }
@@ -72,10 +72,10 @@ var aggregateDefinitions = {
     st: "State",
     gp1: "Major Drainage Area",
     gp2: "Tributary",
-    gp3: "HUC8/Sub-sub drainage ",
+    gp3: "12-Digit hydrologic unit code",
     sg1: "State_Drainage Area",
     sg2: "State_Tributary",
-    sg3: "State_HUC8"
+    sg3: "State_HUC12"
 };
 
 // key, value pairs come from PHOSPHORUS attribute definitions Excel file
