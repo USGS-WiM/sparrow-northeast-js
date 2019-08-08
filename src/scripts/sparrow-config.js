@@ -241,13 +241,13 @@ sources 10+ have non-standard source codes.  Be sure to update the references in
 var phosColors = ["#BF0000", "#FFCCFF", "#FFEC99", "#663100", "#A2EB85"];
 var phosToColors = ["#580000", "#4c044c", "#6e5900", "#120900", "#174f00"];
 
-var nitroColors = ["#BF0000", "#FFCCFF", "#8d4b45", "#FFEC99", "#663100", "#1ABC9C", "#08612e"];
+var nitroColors = ["#BF0000", "#FFCCFF", "#c27ba0", "#FFEC99", "#663100", "#d6ad00", "#c9daf8"];
 var nitroToColors = ["#580000", "#4c044c", "#410600", "#6e5900", "#120900", "#004d3e", "#001f0d"];
 
 var streamflowColors = ["#579689", "#BF0000", "#BB8FCE"];
-var streamflowToColors = ["#004134", "#580000", "#3e0059"];
+var streamflowToColors = ["#2980b9", "#BF0000", "#BB8FCE"];
 
-var sedimentColors = ["#78281f", "#ec7063", "#fadbd8", "#a87e06", "#c7a726", "#f0e27e", "#f58833"]
+var sedimentColors = ["#ff3fff", "#ffb9ff", "#f2dcdb", "#d6ad00", "#fff811", "#A2EB85", "#f58833"]
 var sedimentToColors = ["#450b05", "#8c1508", "#840c00", "#2a1f00", "#624e00", "#6c5f01", "#743707"];
 
 function getFields(sourceDefObj, mappedDefObj, definitionCode, group) {
