@@ -129,7 +129,6 @@ var catchmentDefinitions_ss = {
     st_comid: "SPARROW Reach ID by State",
     pname: "Catchment Name",
     accl: "Accumulated load (MT)",
-    concentrat: "Concentration, mg/L",
     incl: "Incremental load (MT)",
     accy: "Accumulated yield (MT/km2)",
     incy: "Incremental yield (MT/km2)",
@@ -242,7 +241,7 @@ var fromSourceColor = "#FFFFFF";
 var toSourceColor = "#000000";
 var phosColors = ["#BF0000", "#FFCCFF", "#FFEC99", "#663100", "#A2EB85"];
 var nitroColors = ["#BF0000", "#FFCCFF", "#c27ba0", "#FFEC99", "#663100", "#d6ad00", "#c9daf8"];
-var streamflowColors = ["#579689", "#BF0000", "#BB8FCE"];
+var streamflowColors = ["#2980b9", "#BF0000", "#BB8FCE"];
 var sedimentColors = ["#ff3fff", "#ffb9ff", "#f2dcdb", "#d6ad00", "#fff811", "#A2EB85", "#f58833"]
 
 
@@ -1078,15 +1077,6 @@ var Catchments_ss = [
         field: "ACCL",
         name: catchmentDefinitions_ss.accl,
         chartOutfields: getFields(sedimentSourceDefinitions, catchmentDefinitions_ss, "accl", "comid")
-    },
-    {
-        field: "CONCENTRAT",
-        name: catchmentDefinitions_ss.concentrat,
-        chartOutfields: [
-            { attribute: "COMID", label: catchmentDefinitions_ss.comid },
-            { attribute: "CONCENTRAT", label: catchmentDefinitions_ss.concentrat + " Total" }
-
-        ]
     },
     {
         field: "INCL",
