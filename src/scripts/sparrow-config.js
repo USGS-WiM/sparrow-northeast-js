@@ -49,8 +49,8 @@ var sedimentCalibrationURL = rootURL + "northeast_calibration_sites_ss.zip";
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },
-    { field: "GRP1", name: "Major Drainage Area" },
-    { field: "GRP2", name: "Tributary" },
+    { field: "GRP1", name: "Major Estuary/Bay/Gulf Drainage" },
+    { field: "GRP2", name: "Major Watershed" },
     { field: "GRP_3_NA_1", name: "Join Field" },
     { field: "Area_g3", name: "HUC10 area (mi2)" }
 ];
@@ -70,8 +70,8 @@ var stateTableOutFields = [
 
 var aggregateDefinitions = {
     st: "State",
-    gp1: "Major Drainage Area",
-    gp2: "Tributary",
+    gp1: "Major Estuary/Bay/Gulf Drainage",
+    gp2: "Major Watershed",
     gp3: "12-Digit hydrologic unit code",
     sg1: "State_Drainage Area",
     sg2: "State_Tributary",
