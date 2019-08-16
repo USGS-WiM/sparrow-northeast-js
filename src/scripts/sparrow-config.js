@@ -164,7 +164,7 @@ var mappedDefinitions_ss = {
 
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var phosphorusSourceDefinitions = {
-    s1: "Sewerage Point Sources",
+    s1: "Municipal Wastewater Treatment Discharge",
     s2: "Urban Land",
     s3: "Farm Fertilizer",
     s4: "Manure",
@@ -173,7 +173,7 @@ var phosphorusSourceDefinitions = {
 
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var nitrogenSourceDefinitions = {
-    s1: "Sewerage Point Sources",
+    s1: "Municipal Wastewater Treatment Discharge",
     s2: "Urban Land",
     s3: "Septic System Effluent",
     s4: "Farm Fertilizer",
@@ -185,7 +185,7 @@ var nitrogenSourceDefinitions = {
 /***UPDATE IMPORTANT! complete with source data Excel key***/
 var streamflowSourceDefinitions = {
     s1: "Precipitation minus Actual ET",
-    s2: "Sewerage Discharge",
+    s2: "Municipal Wastewater Treatment Discharge",
     s3: "Diversions into Area",
 };
 
