@@ -37,7 +37,7 @@ var groupResultsLabels = {
 };
 
 //download locations
-var rootURL = "https://sparrow.wim.usgs.gov/northeast/downloads/";
+var rootURL = "https://sparrow.wim.usgs.gov/sparrow-northeast-2012/downloads/";
 var phosphorusShapefileURL = rootURL + "northeast_cats_results_tp.zip";
 var nitrogenShapefileURL = rootURL + "northeast_cats_results_tn.zip";
 var streamflowShapefileURL = rootURL + "northeast_cats_results_q.zip";
