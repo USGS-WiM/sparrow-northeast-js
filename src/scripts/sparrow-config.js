@@ -129,6 +129,7 @@ var catchmentDefinitions_ss = {
     st_comid: "SPARROW Reach ID by State",
     pname: "Catchment Name",
     accl: "Accumulated load (MT)",
+    concentrat: "Concentration, mg/ L",
     incl: "Incremental load (MT)",
     accy: "Accumulated yield (MT/km2)",
     incy: "Incremental yield (MT/km2)",
@@ -1084,6 +1085,15 @@ var Catchments_ss = [
         chartOutfields: getFields(sedimentSourceDefinitions, catchmentDefinitions_ss, "incl", "comid")
     },
     {
+        field: "CONCENTRAT",
+        name: catchmentDefinitions_ss.concentrat,
+        chartOutfields: [
+            { attribute: "COMID", label: catchmentDefinitions_ss.comid },
+            { attribute: "CONCENTRAT", label: catchmentDefinitions_ss.concentrat + " Total" }
+    
+        ]
+      },
+    {
         field: "ACCY",
         name: catchmentDefinitions_ss.accy,
         chartOutfields: getFields(sedimentSourceDefinitions, catchmentDefinitions_ss, "accy", "comid")
@@ -1221,7 +1231,7 @@ var Catchments_st_ss = [
         field: "CONCENTRAT",
         name: catchmentDefinitions_ss.concentrat,
         chartOutfields: [
-            { attribute: "COMID", label: catchmentDefinitions_ss.comid },
+            { attribute: "ST_COMID", label: catchmentDefinitions_ss.comid },
             { attribute: "CONCENTRAT", label: catchmentDefinitions_ss.concentrat + " Total" }
 
         ]
